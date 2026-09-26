@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Asociația Multicare Suceava: burse pentru tineri și îngrijire pentru animalele fără stăpân.">
+<style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Multicare Suceava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#F2F4EE; --surface:#FFFFFF; --ink:#18241D; --muted:#56655B; --line:#D6DDD2;
+  --green:#1F4D36; --green-soft:#DCE8DF; --on-green:#F2F4EE;
+  --amber:#D99A2B; --amber-soft:#F6E7C8; --sky:#2F5F8A; --sky-soft:#DDE8F2;
+  --paper:#FBF8F0; --paper-ink:#2A2A22;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#111A15; --surface:#18241D; --ink:#E7EDE8; --muted:#A3B2A8; --line:#2C3B32;
+    --green:#7FC19A; --green-soft:#1F3328; --on-green:#0E1712;
+    --amber:#E8B45A; --amber-soft:#3A2F1A; --sky:#8DB8DF; --sky-soft:#1B2B3A;
+    --paper:#F3EEDF; --paper-ink:#2A2A22;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#111A15; --surface:#18241D; --ink:#E7EDE8; --muted:#A3B2A8; --line:#2C3B32;
+  --green:#7FC19A; --green-soft:#1F3328; --on-green:#0E1712;
+  --amber:#E8B45A; --amber-soft:#3A2F1A; --sky:#8DB8DF; --sky-soft:#1B2B3A;
+  --paper:#F3EEDF; --paper-ink:#2A2A22;
+}
+html[lang="ro"] [data-l="en"], html[lang="en"] [data-l="ro"]{display:none!important}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font:16px/1.6 var(--body); padding-inline:16px}
+.wrap{max-width:1120px; margin-inline:auto}
+h1,h2,h3{font-family:var(--display); line-height:1.08; text-wrap:balance; margin:0; letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px); font-weight:700}
+h3{font-size:20px; font-weight:700}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+button{font:inherit; cursor:pointer}
+:focus-visible{outline:3px solid var(--amber); outline-offset:2px}
+.proto{display:inline-block; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:2px 8px; border-radius:99px; background:var(--amber-soft); color:var(--ink)}
+
+/* top */
+.top{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:18px; flex-wrap:wrap}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+.mark{width:40px; height:40px; border-radius:50%; background:var(--green); color:var(--on-green); display:grid; place-items:center; font:800 20px var(--display)}
+.brand b{font:800 21px var(--display); color:var(--green)}
+.brand small{display:block; font-size:12px; color:var(--muted); line-height:1}
+nav.links{display:flex; gap:22px; font-weight:500}
+nav.links a{text-decoration:none; color:var(--muted)}
+nav.links a:hover{color:var(--ink)}
+.lang{display:flex; border:1px solid var(--line); border-radius:99px; overflow:hidden}
+.lang button{border:0; background:transparent; color:var(--muted); padding:6px 12px; font-weight:600; font-size:13px}
+.lang button[aria-pressed="true"]{background:var(--green); color:var(--on-green)}
+@media (max-width:760px){nav.links{display:none}}
+
+/* hero */
+.hero{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:start; padding-block:28px 56px}
+@media (max-width:900px){.hero{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,6.2vw,76px); font-weight:800; color:var(--green)}
+.hero h1 em{font-style:normal; color:var(--amber)}
+.hero .lede{font-size:19px; color:var(--muted); max-width:34ch; margin-top:18px}
+.split{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:28px}
+.photo{border-radius:var(--r); aspect-ratio:4/5; max-width:100%; display:flex; align-items:flex-end; padding:14px; font-size:13px; font-weight:600; position:relative; overflow:hidden}
+.photo.a{background:repeating-linear-gradient(135deg,var(--amber-soft) 0 14px, transparent 14px 28px), var(--amber-soft); color:var(--ink)}
+.photo.p{background:repeating-linear-gradient(45deg,var(--sky-soft) 0 14px, transparent 14px 28px), var(--sky-soft); color:var(--ink)}
+.photo span{background:var(--surface); padding:6px 10px; border-radius:8px; position:relative; z-index:1}
+.photo img, .ph img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.photo:has(img) span{display:none}
+
+/* origin */
+.origin{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center}
+@media (max-width:820px){.origin{grid-template-columns:1fr}}
+.video{position:relative; aspect-ratio:16/10; max-width:100%; border-radius:var(--r); background:var(--green); color:var(--on-green); display:grid; place-items:center; text-align:center; padding:20px; overflow:hidden}
+.video .play{width:64px; height:64px; border-radius:50%; background:var(--on-green); display:grid; place-items:center; margin:0 auto 12px}
+.video .play::after{content:""; border-left:18px solid var(--green); border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:5px}
+.video small{opacity:.8}
+.origin blockquote{margin:0; font:600 clamp(22px,2.6vw,28px)/1.3 var(--display); color:var(--green); text-wrap:balance}
+.origin .who{font-size:14px; color:var(--muted); margin-top:10px}
+.origin .body{display:grid; gap:14px; color:var(--muted); font-size:17px}
+.draft{font-size:12.5px; color:var(--muted); border:1px dashed var(--line); border-radius:8px; padding:8px 10px}
+
+/* stories */
+.filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:22px}
+.filters button{border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:99px; padding:8px 16px; font-weight:600}
+.filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.stories{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+@media (max-width:900px){.stories{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.stories{grid-template-columns:1fr}}
+.story{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; display:flex; flex-direction:column}
+.ph{position:relative; aspect-ratio:4/3; max-width:100%}
+.story.animal .ph{background:repeating-linear-gradient(135deg,var(--amber-soft) 0 14px, transparent 14px 28px), var(--amber-soft)}
+.story.person .ph{background:repeating-linear-gradient(45deg,var(--sky-soft) 0 14px, transparent 14px 28px), var(--sky-soft)}
+.story .txt{padding:18px 20px 22px; display:grid; gap:8px}
+.story .kind{font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase}
+.story.animal .kind{color:var(--amber)} .story.person .kind{color:var(--sky)}
+.story .ok{font-size:12px; color:var(--muted)}
+.story .status{justify-self:start; font-size:12px; font-weight:600; padding:3px 10px; border-radius:99px; background:var(--green-soft); color:var(--ink)}
+.facts{display:flex; gap:28px; flex-wrap:wrap; margin-top:26px}
+.facts div{font-size:14px; color:var(--muted)}
+.facts b{display:block; font:800 34px var(--display); color:var(--ink); font-variant-numeric:tabular-nums}
+
+/* donate card */
+.donate{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:24px; box-shadow:0 18px 40px -24px rgba(20,40,30,.35); position:sticky; top:calc(env(safe-area-inset-top,0px) + 16px)}
+.seg{display:grid; grid-template-columns:1fr 1fr; background:var(--bg); border-radius:99px; padding:4px; margin-top:14px}
+.seg button{border:0; background:transparent; padding:10px; border-radius:99px; font-weight:600; color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--green); color:var(--on-green)}
+.amounts{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:16px}
+.amounts button{border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:10px; padding:12px 6px; font-weight:600; font-variant-numeric:tabular-nums}
+.amounts button[aria-pressed="true"]{border-color:var(--green); background:var(--green-soft)}
+.impact{min-height:48px; margin-top:12px; font-size:14px; color:var(--muted); background:var(--bg); border-radius:10px; padding:10px 12px}
+.impact strong{color:var(--ink)}
+label.f{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-top:14px}
+.f input,.f select{display:block; width:100%; margin-top:6px; padding:11px 12px; border:1px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink); font:inherit}
+.cta{display:block; width:100%; margin-top:16px; border:0; border-radius:99px; background:var(--green); color:var(--on-green); padding:14px; font-weight:700; font-size:16px}
+.note{font-size:12.5px; color:var(--muted); margin-top:12px}
+.done{margin-top:12px; font-size:14px; background:var(--green-soft); border-radius:10px; padding:10px 12px}
+
+section{padding-block:64px; border-top:1px solid var(--line)}
+.head{display:grid; gap:12px; max-width:62ch; margin-bottom:32px}
+.head p{color:var(--muted); font-size:17px}
+
+/* two programmes */
+.progs{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+@media (max-width:760px){.progs{grid-template-columns:1fr}}
+.prog{border-radius:var(--r); padding:26px; display:grid; gap:12px; align-content:start}
+.prog.people{background:var(--sky-soft)} .prog.animals{background:var(--amber-soft)}
+.prog ul{margin:0; padding-left:18px; color:var(--ink)}
+.prog .tag{font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase}
+.people .tag{color:var(--sky)} .animals .tag{color:var(--amber)}
+
+/* journey */
+.journey{display:grid; grid-template-columns:280px 1fr; gap:28px}
+@media (max-width:800px){.journey{grid-template-columns:1fr}}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:4px; counter-reset:s}
+.steps button{width:100%; text-align:left; border:0; background:transparent; color:var(--muted); padding:12px 14px; border-radius:10px; display:flex; gap:12px; align-items:center; font-weight:600}
+.steps button::before{counter-increment:s; content:counter(s); width:26px; height:26px; flex:none; border-radius:50%; border:1.5px solid currentColor; display:grid; place-items:center; font-size:13px}
+.steps button[aria-selected="true"]{background:var(--surface); color:var(--ink); box-shadow:inset 3px 0 0 var(--green)}
+.stage{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:28px; display:grid; gap:14px; align-content:start}
+.stage .when{font-size:13px; font-weight:600; color:var(--green)}
+.stage p{max-width:60ch}
+.letter{background:var(--paper); color:var(--paper-ink); border-radius:4px; padding:26px 28px; font-size:17px; line-height:1.7; box-shadow:0 1px 0 rgba(0,0,0,.06), 0 14px 30px -18px rgba(0,0,0,.35); transform:rotate(-.6deg); max-width:560px; background-image:repeating-linear-gradient(transparent 0 28px, rgba(47,95,138,.14) 28px 29px)}
+.letter .sig{margin-top:12px; font-weight:600}
+.letter .redact{background:var(--paper-ink); color:transparent; border-radius:2px; user-select:none}
+.privacy{font-size:13.5px; color:var(--muted); border-left:3px solid var(--sky); padding-left:12px}
+
+/* cohort */
+.cohort{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:start}
+@media (max-width:860px){.cohort{grid-template-columns:1fr}}
+.meter{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px; display:grid; gap:18px}
+.bar{height:14px; border-radius:99px; background:var(--bg); overflow:hidden; display:flex}
+.bar i{display:block; height:100%}
+.bar .s{background:var(--green)} .bar .w{background:var(--amber)}
+.legend{display:flex; gap:20px; flex-wrap:wrap; font-size:14px; color:var(--muted)}
+.legend b{color:var(--ink); font-variant-numeric:tabular-nums}
+.dot{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:6px; vertical-align:middle}
+.cycle{display:grid; grid-template-columns:repeat(4,1fr); gap:8px}
+@media (max-width:560px){.cycle{grid-template-columns:1fr 1fr}}
+.cycle div{border-radius:10px; padding:12px; background:var(--bg); font-size:13.5px}
+.cycle div.now{background:var(--green); color:var(--on-green)}
+.cycle b{display:block; font-family:var(--display); font-size:15px}
+form.wait{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:24px}
+
+/* ways */
+.ways{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+@media (max-width:860px){.ways{grid-template-columns:1fr}}
+.way{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:22px; display:grid; gap:10px; align-content:start}
+.way .big{font:800 30px var(--display); color:var(--green)}
+.copy{display:flex; gap:8px; align-items:center; background:var(--bg); border-radius:10px; padding:8px 8px 8px 12px; font-family:ui-monospace,Menlo,monospace; font-size:13px; overflow-x:auto}
+.copy code{flex:1; white-space:nowrap}
+.copy button{border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:8px; padding:6px 10px; font:600 12px var(--body)}
+
+/* monthly promise */
+.promise{background:var(--green); color:var(--on-green); border-radius:20px; padding:36px; display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center}
+@media (max-width:760px){.promise{grid-template-columns:1fr; padding:26px}}
+.promise h2{color:var(--on-green)}
+.promise p{opacity:.9}
+.inbox{background:var(--surface); color:var(--ink); border-radius:12px; padding:6px}
+.inbox div{display:grid; grid-template-columns:70px 1fr; gap:10px; padding:10px 12px; border-bottom:1px solid var(--line); font-size:14px}
+.inbox div:last-child{border:0}
+.inbox time{color:var(--muted); font-variant-numeric:tabular-nums}
+
+footer{padding-block:40px 56px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Multicare">
+      <span class="mark" aria-hidden="true">M</span>
+      <span><b>Multicare</b><small>Asociația Multicare Suceava</small></span>
+    </a>
+    <nav class="links">
+      <a href="#poveste"><span data-l="ro">Povestea noastră</span><span data-l="en">Our story</span></a>
+      <a href="#programe"><span data-l="ro">Ce facem</span><span data-l="en">What we do</span></a>
+      <a href="#burse"><span data-l="ro">Burse</span><span data-l="en">Scholarships</span></a>
+      <a href="#ciclu"><span data-l="ro">Sponsorizează</span><span data-l="en">Sponsor</span></a>
+      <a href="#ajuta"><span data-l="ro">Implică-te</span><span data-l="en">Get involved</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="lang-ro" aria-pressed="true">RO</button>
+      <button id="lang-en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <p class="eyebrow"><span data-l="ro">Suceava · oameni și animale</span><span data-l="en">Suceava · people and animals</span></p>
+        <h1 style="margin-top:14px">
+          <span data-l="ro">Grijă pentru cei care <em>nu pot cere</em> singuri.</span>
+          <span data-l="en">Care for those who <em>can't ask</em> for it themselves.</span>
+        </h1>
+        <p class="lede">
+          <span data-l="ro">Dăm burse lunare copiilor și tinerilor care altfel ar renunța la școală, și îngrijim animalele fără stăpân din județ. Fiecare leu are un nume și o poveste.</span>
+          <span data-l="en">We give monthly scholarships to young people who would otherwise drop out, and care for stray animals across the county. Every leu has a name and a story behind it.</span>
+        </p>
+        <div class="facts">
+          <div><b>50+</b><span data-l="ro">tineri cu bursă în 2025</span><span data-l="en">young people on scholarships in 2025</span></div>
+          <div><b>120+</b><span data-l="ro">pe lista de așteptare</span><span data-l="en">on the waiting list</span></div>
+          <div><b>25</b><span data-l="ro">ani de asistență socială</span><span data-l="en">years of social work</span></div>
+        </div>
+        <div class="split">
+          <div class="photo p"><img src="images/hero-oameni.jpg" alt="" onerror="this.remove()"><span data-l="ro">Foto: festivitate burse</span><span data-l="en">Photo: scholarship event</span></div>
+          <div class="photo a"><img src="images/hero-animale.jpg" alt="" onerror="this.remove()"><span data-l="ro">Foto: animal salvat</span><span data-l="en">Photo: rescued animal</span></div>
+        </div>
+      </div>
+
+      <aside class="donate" aria-labelledby="don-t">
+        <h3 id="don-t"><span data-l="ro">Donația ta</span><span data-l="en">Your donation</span></h3>
+        <div class="seg" role="group" aria-label="Frequency">
+          <button id="freq-once" aria-pressed="false"><span data-l="ro">O singură dată</span><span data-l="en">One-time</span></button>
+          <button id="freq-month" aria-pressed="true"><span data-l="ro">Lunar</span><span data-l="en">Monthly</span></button>
+        </div>
+        <div class="amounts" id="amounts"></div>
+        <div class="impact" id="impact" aria-live="polite"></div>
+        <label class="f" for="don-dest"><span data-l="ro">Pentru</span><span data-l="en">For</span>
+          <select id="don-dest">
+            <option value="need" data-ro="Unde e nevoie mai mare" data-en="Where it's needed most"></option>
+            <option value="burse" data-ro="Burse pentru Viitor" data-en="Scholarships for the Future"></option>
+            <option value="animale" data-ro="Animale fără stăpân" data-en="Stray animals"></option>
+          </select>
+        </label>
+        <button class="cta" id="don-go"></button>
+        <p class="note"><span data-l="ro">Donatorii lunari primesc vești de la noi o dată pe anotimp. Poți opri donația oricând.</span><span data-l="en">Monthly donors hear from us once a season. Cancel any time.</span></p>
+        <div class="done" id="don-done" hidden></div>
+      </aside>
+    </div>
+
+    <section id="poveste">
+      <div class="origin">
+        <div class="video">
+          <div>
+            <div class="play" aria-hidden="true"></div>
+            <b><span data-l="ro">De ce Multicare</span><span data-l="en">Why Multicare</span></b><br>
+            <small><span data-l="ro">Aici va fi video-ul cu Nicoleta · 2–3 minute</span><span data-l="en">Nicoleta's video goes here · 2–3 minutes</span></small>
+          </div>
+        </div>
+        <div class="body">
+          <p class="eyebrow"><span data-l="ro">Cum a început</span><span data-l="en">How it started</span></p>
+          <blockquote><span data-l="ro">„Am lucrat 25 de ani în asistență socială. Nu m-am putut opri doar pentru că am ieșit la pensie.”</span><span data-l="en">"I spent 25 years in social work. Retiring wasn't going to make me stop."</span></blockquote>
+          <p class="who">Nicoleta, <span data-l="ro">fondatoarea Multicare</span><span data-l="en">founder of Multicare</span></p>
+          <p><span data-l="ro">După ani întregi în care a văzut copii renunțând la școală pentru un abonament de autobuz, și câini lăsați pe drumuri pentru că un tratament costa prea mult, Nicoleta a pornit Multicare cu o idee simplă: să ajungă ajutorul exact acolo unde lipsește.</span><span data-l="en">After years of seeing children leave school over the cost of a bus pass, and dogs abandoned because treatment cost too much, Nicoleta started Multicare with a simple idea: get help to exactly where it's missing.</span></p>
+          <p class="draft"><span data-l="ro">Text de lucru: de rescris cu cuvintele Nicoletei.</span><span data-l="en">Working draft: to be rewritten in Nicoleta's own words.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programe">
+      <div class="head">
+        <p class="eyebrow"><span data-l="ro">Ce facem</span><span data-l="en">What we do</span></p>
+        <h2><span data-l="ro">Două programe, aceeași încăpățânare.</span><span data-l="en">Two programmes, one stubborn idea.</span></h2>
+      </div>
+      <div class="progs">
+        <article class="prog people">
+          <span class="tag"><span data-l="ro">Oameni</span><span data-l="en">People</span></span>
+          <h3><span data-l="ro">Burse pentru Viitor</span><span data-l="en">Scholarships for the Future</span></h3>
+          <p><span data-l="ro">Burse lunare de 300–500 lei pentru copii și studenți din familii fără posibilități, de la școala generală până la facultate.</span><span data-l="en">Monthly scholarships of 300–500 lei for children and students from low-income families, from primary school through university.</span></p>
+          <ul>
+            <li><span data-l="ro">Sponsorul e legat de un tânăr anume</span><span data-l="en">Each sponsor is matched with one young person</span></li>
+            <li><span data-l="ro">Ajutor de urgență pentru familiile lor</span><span data-l="en">Emergency help for their families</span></li>
+          </ul>
+        </article>
+        <article class="prog animals">
+          <span class="tag"><span data-l="ro">Animale</span><span data-l="en">Animals</span></span>
+          <h3><span data-l="ro">Salvare și sterilizare</span><span data-l="en">Rescue and sterilisation</span></h3>
+          <p><span data-l="ro">Tratament veterinar pentru animalele fără stăpân, sterilizări și sprijin pentru oamenii de la sat care își iubesc animalele dar nu își permit veterinarul.</span><span data-l="en">Vet care for strays, sterilisation, and support for village families who love their animals but can't afford the vet.</span></p>
+          <ul>
+            <li><span data-l="ro">Rețea de case temporare</span><span data-l="en">A network of foster homes</span></li>
+            <li><span data-l="ro">Adopții responsabile</span><span data-l="en">Responsible adoptions</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="povesti">
+      <div class="head">
+        <p class="eyebrow"><span data-l="ro">Povești</span><span data-l="en">Stories</span></p>
+        <h2><span data-l="ro">Fiecare fotografie are un nume.</span><span data-l="en">Every photo has a name.</span></h2>
+        <p><span data-l="ro">Tinerii apar aici doar dacă vor ei, cu acordul scris al lor și al părinților, și doar cu prenumele.</span><span data-l="en">Young people appear here only if they choose to, with written consent from them and their parents, and first names only.</span></p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter stories">
+        <button data-f="all" aria-pressed="true"><span data-l="ro">Toate</span><span data-l="en">All</span></button>
+        <button data-f="animal" aria-pressed="false"><span data-l="ro">Animale</span><span data-l="en">Animals</span></button>
+        <button data-f="person" aria-pressed="false"><span data-l="ro">Oameni</span><span data-l="en">People</span></button>
+      </div>
+      <div class="stories" id="stories"></div>
+      <p class="draft" style="margin-top:18px"><span data-l="ro">Povești de exemplu. Le înlocuim cu cele reale și cu fotografiile din folderul images.</span><span data-l="en">Example stories. We'll swap in real ones and photos from the images folder.</span></p>
+    </section>
+
+    <section id="burse">
+      <div class="head">
+        <p class="eyebrow"><span data-l="ro">Drumul unei burse</span><span data-l="en">A scholarship's journey</span></p>
+        <h2><span data-l="ro">Nu arătăm fețele copiilor. Arătăm drumul.</span><span data-l="en">We don't show the children's faces. We show the journey.</span></h2>
+        <p><span data-l="ro">Poveștile lor sunt ale lor. Pe site nu apar nume sau fotografii. Sponsorul primește scrisoarea tânărului pe care îl susține, direct de la noi.</span><span data-l="en">Their stories belong to them. No names or photos appear on the site. Each sponsor receives a letter from the young person they support, sent privately by us.</span></p>
+      </div>
+      <div class="journey">
+        <ol class="steps" role="tablist" id="steps"></ol>
+        <div class="stage" id="stage" role="tabpanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="ciclu">
+      <div class="head">
+        <p class="eyebrow"><span data-l="ro">Sponsorizează un tânăr</span><span data-l="en">Sponsor a young person</span></p>
+        <h2><span data-l="ro">Primim sponsori în serii, ca să avem grijă de fiecare.</span><span data-l="en">We welcome sponsors in rounds, so each one gets real attention.</span></h2>
+        <p><span data-l="ro">Asociația e condusă de un singur om. Ca să răspundem fiecărui sponsor și fiecărui tânăr cum se cuvine, deschidem locuri noi de două ori pe an. Între serii, te poți înscrie pe lista de așteptare.</span><span data-l="en">The association is run by one person. To give every sponsor and every young person proper attention, we open new places twice a year. Between rounds, you can join the waiting list.</span></p>
+      </div>
+      <div class="cohort">
+        <div class="meter">
+          <div>
+            <p class="eyebrow" id="round-label"></p>
+            <h3 style="margin-top:6px" id="round-status"></h3>
+          </div>
+          <div class="bar" aria-hidden="true"><i class="s" id="bar-s"></i><i class="w" id="bar-w"></i></div>
+          <div class="legend">
+            <span><i class="dot" style="background:var(--green)"></i><b id="n-s"></b> <span data-l="ro">tineri sprijiniți</span><span data-l="en">supported</span></span>
+            <span><i class="dot" style="background:var(--amber)"></i><b id="n-w"></b> <span data-l="ro">așteaptă un sponsor</span><span data-l="en">waiting for a sponsor</span></span>
+          </div>
+          <div class="cycle" id="cycle"></div>
+        </div>
+        <form class="wait" id="wait-form" novalidate>
+          <h3><span data-l="ro">Lista de așteptare pentru sponsori</span><span data-l="en">Sponsor waiting list</span></h3>
+          <p class="note"><span data-l="ro">Te anunțăm când se deschide următoarea serie. Nu trimitem nimic altceva.</span><span data-l="en">We'll tell you when the next round opens. Nothing else.</span></p>
+          <label class="f" for="w-name"><span data-l="ro">Nume</span><span data-l="en">Name</span><input id="w-name" required autocomplete="name"></label>
+          <label class="f" for="w-email">E-mail<input id="w-email" type="email" required autocomplete="email"></label>
+          <label class="f" for="w-level"><span data-l="ro">Cât ai vrea să oferi lunar</span><span data-l="en">What you'd like to give monthly</span>
+            <select id="w-level">
+              <option value="300" data-ro="300 lei · o bursă de gimnaziu" data-en="300 lei · a school scholarship"></option>
+              <option value="500" data-ro="500 lei · o bursă de student" data-en="500 lei · a university scholarship"></option>
+              <option value="share" data-ro="O parte dintr-o bursă, împreună cu alții" data-en="Part of a scholarship, shared with others"></option>
+            </select>
+          </label>
+          <button class="cta" type="submit"><span data-l="ro">Pune-mă pe listă</span><span data-l="en">Add me to the list</span></button>
+          <div class="done" id="wait-done" hidden></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="ajuta">
+      <div class="head">
+        <p class="eyebrow"><span data-l="ro">Alte feluri de a ajuta</span><span data-l="en">Other ways to help</span></p>
+        <h2><span data-l="ro">Unele nu te costă nimic.</span><span data-l="en">Some cost you nothing.</span></h2>
+      </div>
+      <div class="ways">
+        <div class="way">
+          <span class="big">3,5%</span>
+          <h3><span data-l="ro">Formularul 230</span><span data-l="en">Form 230 (Romanian taxpayers)</span></h3>
+          <p><span data-l="ro">Redirecționează 3,5% din impozitul pe venit către Multicare. Banii ar merge oricum la stat.</span><span data-l="en">If you pay income tax in Romania, you can redirect 3.5% of it to Multicare. It would go to the state anyway.</span></p>
+          <div class="copy"><code>CIF: [de completat]</code><button type="button" data-copy="CIF">Copiază</button></div>
+        </div>
+        <div class="way">
+          <span class="big">IBAN</span>
+          <h3><span data-l="ro">Transfer bancar</span><span data-l="en">Bank transfer</span></h3>
+          <p><span data-l="ro">Pentru donații directe. Scrie „Burse” sau „Animale” la detalii dacă vrei să alegi programul.</span><span data-l="en">For direct gifts. Add "Burse" or "Animale" as the reference to choose a programme.</span></p>
+          <div class="copy"><code>RO00 XXXX 0000 0000 0000 0000</code><button type="button" data-copy="IBAN">Copiază</button></div>
+        </div>
+        <div class="way">
+          <span class="big"><span data-l="ro">Timp</span><span data-l="en">Time</span></span>
+          <h3><span data-l="ro">Voluntariat și case temporare</span><span data-l="en">Volunteering and fostering</span></h3>
+          <p><span data-l="ro">Transport la veterinar, o casă temporară pentru un pui, meditații pentru un elev. Spune-ne ce poți face.</span><span data-l="en">Lifts to the vet, a temporary home for a puppy, tutoring a student. Tell us what you can offer.</span></p>
+          <a class="copy" style="text-decoration:none" href="#" onclick="return false"><code><span data-l="ro">Formular voluntari (link)</span><span data-l="en">Volunteer form (link)</span></code></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="promise">
+        <div style="display:grid;gap:14px">
+          <p class="eyebrow" style="color:var(--on-green);opacity:.75"><span data-l="ro">Pentru donatorii lunari</span><span data-l="en">For monthly donors</span></p>
+          <h2><span data-l="ro">O scrisoare în fiecare anotimp.</span><span data-l="en">One letter every season.</span></h2>
+          <p><span data-l="ro">De patru ori pe an îți spunem ce s-a întâmplat cu banii tăi: animale salvate, tineri care au trecut încă un semestru, ce urmează. Plus un mulțumesc imediat după prima donație. Fără spam.</span><span data-l="en">Four times a year we tell you what your money did: animals rescued, young people through another term, what's next. Plus a thank you straight after your first gift. No spam.</span></p>
+        </div>
+        <div class="inbox" aria-label="Example emails">
+          <div><time><span data-l="ro">ACUM</span><span data-l="en">NOW</span></time><span data-l="ro">Mulțumim că ești alături de noi</span><span data-l="en">Thank you for joining us</span></div>
+          <div><time><span data-l="ro">IARNĂ</span><span data-l="en">WINTER</span></time><span data-l="ro">Anul Multicare, pe scurt</span><span data-l="en">Multicare's year in brief</span></div>
+          <div><time><span data-l="ro">PRIMĂV.</span><span data-l="en">SPRING</span></time><span data-l="ro">Cine a primit bursă în seria nouă</span><span data-l="en">Who joined the new scholarship round</span></div>
+          <div><time><span data-l="ro">VARĂ</span><span data-l="en">SUMMER</span></time><span data-l="ro">Sezonul puilor: câte animale am sterilizat</span><span data-l="en">Puppy season: how many animals we sterilised</span></div>
+          <div><time><span data-l="ro">TOAMNĂ</span><span data-l="en">AUTUMN</span></time><span data-l="ro">Început de an școlar, în cuvintele lor</span><span data-l="en">Back to school, in their own words</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Asociația Multicare Suceava · CIF [de completat]</span>
+    <span class="proto"><span data-l="ro">Prototip · fotografii și date de completat</span><span data-l="en">Prototype · photos and details to add</span></span>
+  </footer>
+</div>
+
+<script>
+/* ===== Editable content: Mom or Aicha update these values ===== */
+const SITE = {
+  supported: 50,
+  waiting: 120,
+  round: { ro: "Seria de primăvară 2027", en: "Spring 2027 round" },
+  roundOpen: false,
+  opens: { ro: "Se deschide în februarie 2027", en: "Opens February 2027" },
+};
+const AMOUNTS = [25, 50, 100, 300, 500, 1000];
+const IMPACT = {
+  25:  { ro: "Ajută la hrana unui animal aflat în grija noastră.", en: "Helps feed an animal in our care." },
+  50:  { ro: "Contribuie la tratamentul unui animal găsit rănit.", en: "Goes towards treating an injured stray." },
+  100: { ro: "Contribuie la o sterilizare sau la rechizitele unui elev.", en: "Goes towards a sterilisation or a pupil's school supplies." },
+  300: { ro: "<strong>O lună întreagă</strong> de bursă pentru un elev.", en: "<strong>A full month</strong> of scholarship for a pupil." },
+  500: { ro: "<strong>O lună întreagă</strong> de bursă pentru un student.", en: "<strong>A full month</strong> of scholarship for a university student." },
+  1000:{ ro: "Două luni de bursă, sau un fond de urgență pentru o familie.", en: "Two months of scholarship, or an emergency fund for a family." },
+};
+const STEPS = [
+  { t:{ro:"Cererea",en:"Applying"}, when:{ro:"Oricând în an",en:"Any time of year"},
+    b:{ro:"Tânărul sau familia ne scrie, de obicei la recomandarea unui profesor sau a școlii. Discutăm cu ei și aflăm ce le lipsește.",en:"The young person or their family gets in touch, usually through a teacher or the school. We talk with them and understand what's missing."}},
+  { t:{ro:"Evaluarea",en:"Assessment"}, when:{ro:"2–4 săptămâni",en:"2–4 weeks"},
+    b:{ro:"Verificăm situația familiei și rezultatele școlare. Fiecare caz e văzut de un om cu 25 de ani de experiență în asistență socială.",en:"We look at the family's situation and school results. Every case is reviewed by someone with 25 years in social work."}},
+  { t:{ro:"Potrivirea",en:"Matching"}, when:{ro:"La deschiderea unei serii",en:"When a round opens"},
+    b:{ro:"Când se deschide o serie, fiecare sponsor nou e legat de un tânăr de pe lista de așteptare.",en:"When a round opens, each new sponsor is matched with a young person from the waiting list."}},
+  { t:{ro:"Scrisoarea",en:"The letter"}, when:{ro:"În prima lună",en:"In the first month"}, letter:true,
+    b:{ro:"Tânărul îi scrie sponsorului despre el și despre visul lui. Scrisoarea ajunge doar la sponsor.",en:"The young person writes to their sponsor about themselves and their hopes. Only the sponsor receives it."}},
+  { t:{ro:"Pe parcurs",en:"During the year"}, when:{ro:"În fiecare trimestru",en:"Every quarter"},
+    b:{ro:"Bursa se plătește lunar. Sponsorul primește vești despre școală de câteva ori pe an, fără date care să-l identifice pe tânăr.",en:"The scholarship is paid monthly. Sponsors get school updates a few times a year, with nothing that identifies the young person."}},
+  { t:{ro:"Finalul anului",en:"End of year"}, when:{ro:"Iunie",en:"June"},
+    b:{ro:"Tânărul trimite o a doua scrisoare. Sponsorul alege dacă continuă încă un an.",en:"The young person sends a second letter. The sponsor decides whether to continue for another year."}},
+];
+const CYCLE = [
+  {k:"feb", ro:["Februarie","Seria de primăvară"], en:["February","Spring round"]},
+  {k:"mar", ro:["Mar–Aug","Scrisori și vești"], en:["Mar–Aug","Letters and updates"]},
+  {k:"sep", ro:["Septembrie","Seria de toamnă"], en:["September","Autumn round"]},
+  {k:"oct", ro:["Oct–Ian","Evaluări noi"], en:["Oct–Jan","New assessments"]},
+];
+const STORIES = [
+  { type:"animal", img:"images/povesti/tauciune.jpg", name:"Tăciune",
+    ro:"Găsit lângă o stație de autobuz, cu o lăbuță rănită. Operat, sterilizat și, după trei luni într-o casă temporară, adoptat de o familie din Rădăuți.",
+    en:"Found by a bus stop with an injured paw. Operated on, sterilised and, after three months in foster care, adopted by a family in Rădăuți.",
+    status:{ro:"Adoptat",en:"Adopted"} },
+  { type:"person", img:"images/povesti/ioana.jpg", name:"Ioana",
+    ro:"Primește bursă din clasa a IX-a. Anul acesta a intrat la Asistență Medicală. Ne-a zis că prima ei lecție de la noi a fost că poate cere ajutor.",
+    en:"On a scholarship since Year 10. This year she started nursing school. She told us the first thing she learned from us was that it's OK to ask for help.",
+    status:{ro:"Studentă",en:"University student"}, consent:true },
+  { type:"animal", img:"images/povesti/mama-si-puii.jpg", name:{ro:"Mama și cei 6 pui",en:"A mum and her 6 pups"},
+    ro:"Găsiți într-o curte părăsită în februarie. Toți șapte sterilizați și vaccinați. Patru pui au deja stăpâni.",
+    en:"Found in an abandoned yard in February. All seven sterilised and vaccinated. Four of the pups already have homes.",
+    status:{ro:"Caută casă",en:"Looking for a home"} },
+];
+/* ============================================================== */
+
+let lang = "ro", freq = "month", amount = 300, step = 3, filter = "all";
+const $ = id => document.getElementById(id);
+
+function fmt(n){ return n.toLocaleString(lang==="ro"?"ro-RO":"en-GB") + " lei"; }
+
+function render(){
+  document.documentElement.lang = lang;
+  $("lang-ro").setAttribute("aria-pressed", lang==="ro");
+  $("lang-en").setAttribute("aria-pressed", lang==="en");
+  document.querySelectorAll("option[data-ro]").forEach(o => o.textContent = o.dataset[lang]);
+  document.querySelectorAll("[data-copy]").forEach(b => b.textContent = lang==="ro"?"Copiază":"Copy");
+
+  $("freq-once").setAttribute("aria-pressed", freq==="once");
+  $("freq-month").setAttribute("aria-pressed", freq==="month");
+  $("amounts").innerHTML = AMOUNTS.map(a =>
+    `<button type="button" data-a="${a}" aria-pressed="${a===amount}">${fmt(a)}</button>`).join("");
+  const per = freq==="month" ? (lang==="ro"?" în fiecare lună":" every month") : "";
+  $("impact").innerHTML = IMPACT[amount][lang] + (freq==="month" && amount>=300 ? (lang==="ro"?" Timp de un an, asta înseamnă un an școlar întreg.":" Over a year, that's a whole school year.") : "");
+  $("don-go").textContent = (lang==="ro"?"Donează ":"Give ") + fmt(amount) + per;
+
+  $("steps").innerHTML = STEPS.map((s,i) =>
+    `<li><button role="tab" aria-selected="${i===step}" data-s="${i}">${s.t[lang]}</button></li>`).join("");
+  const s = STEPS[step];
+  $("stage").innerHTML = `<span class="when">${s.when[lang]}</span><h3>${s.t[lang]}</h3><p>${s.b[lang]}</p>` +
+    (s.letter ? (lang==="ro"
+      ? `<div class="letter">Dragă sponsorule,<br>Sunt în clasa a X-a la un liceu din <span class="redact">Suceava</span>. Mama lucrează în schimburi și eu am grijă de frații mei după școală. Vreau să mă fac asistentă medicală. Cu bursa o să-mi pot lua abonamentul la autobuz și cărțile pentru bacalaureat.<div class="sig">Cu drag, A.</div></div><p class="privacy">Exemplu inventat, pentru a arăta formatul. Scrisorile reale nu apar niciodată pe site.</p>`
+      : `<div class="letter">Dear sponsor,<br>I'm in Year 11 at a high school in <span class="redact">Suceava</span>. My mum works shifts and I look after my brothers after school. I want to become a nurse. With the scholarship I can pay for my bus pass and my exam books.<div class="sig">With love, A.</div></div><p class="privacy">Invented example to show the format. Real letters never appear on the site.</p>`) : "");
+
+  $("round-label").textContent = SITE.round[lang];
+  $("round-status").textContent = SITE.roundOpen ? (lang==="ro"?"Locuri deschise acum":"Places open now") : SITE.opens[lang];
+  const tot = SITE.supported + SITE.waiting;
+  $("bar-s").style.width = (SITE.supported/tot*100)+"%";
+  $("bar-w").style.width = (SITE.waiting/tot*100)+"%";
+  $("n-s").textContent = SITE.supported; $("n-w").textContent = SITE.waiting + "+";
+  const m = new Date().getMonth(); const nowK = m===1?"feb":m===8?"sep":(m>=2&&m<=7)?"mar":"oct";
+  $("cycle").innerHTML = CYCLE.map(c => `<div class="${c.k===nowK?'now':''}"><b>${c[lang][0]}</b>${c[lang][1]}</div>`).join("");
+
+  document.querySelectorAll("[data-f]").forEach(b => b.setAttribute("aria-pressed", b.dataset.f===filter));
+  $("stories").innerHTML = STORIES.filter(s => filter==="all" || s.type===filter).map(s => `
+    <article class="story ${s.type}">
+      <div class="ph"><img src="${s.img}" alt="${typeof s.name==='string'?s.name:s.name[lang]}" onerror="this.remove()"></div>
+      <div class="txt">
+        <span class="kind">${s.type==="animal"?(lang==="ro"?"Animale":"Animals"):(lang==="ro"?"Oameni":"People")}</span>
+        <h3>${typeof s.name==='string'?s.name:s.name[lang]}</h3>
+        <p>${s[lang]}</p>
+        <span class="status">${s.status[lang]}</span>
+        ${s.consent?`<span class="ok">${lang==="ro"?"Publicat cu acordul ei și al familiei.":"Shared with her and her family's consent."}</span>`:""}
+      </div>
+    </article>`).join("");
+}
+
+$("lang-ro").onclick = () => { lang="ro"; render(); };
+$("lang-en").onclick = () => { lang="en"; render(); };
+$("freq-once").onclick = () => { freq="once"; render(); };
+$("freq-month").onclick = () => { freq="month"; render(); };
+$("amounts").onclick = e => { const b=e.target.closest("[data-a]"); if(b){ amount=+b.dataset.a; render(); } };
+$("steps").onclick = e => { const b=e.target.closest("[data-s]"); if(b){ step=+b.dataset.s; render(); } };
+document.querySelector(".filters").onclick = e => { const b=e.target.closest("[data-f]"); if(b){ filter=b.dataset.f; render(); } };
+$("don-go").onclick = () => {
+  const d=$("don-done"); d.hidden=false;
+  d.textContent = lang==="ro"
+    ? "Prototip: aici se va deschide plata securizată (card, Apple Pay, Google Pay), cu opțiunea de plată lunară."
+    : "Prototype: this is where secure checkout will open (card, Apple Pay, Google Pay), including monthly billing.";
+};
+$("wait-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const ok = $("w-name").value.trim() && /\S+@\S+\.\S+/.test($("w-email").value);
+  const d=$("wait-done"); d.hidden=false;
+  d.textContent = !ok
+    ? (lang==="ro"?"Completează numele și o adresă de e-mail validă.":"Please add your name and a valid email address.")
+    : (lang==="ro"?`Mulțumim, ${$("w-name").value.trim()}! Prototip: în versiunea finală te adăugăm pe listă și primești un e-mail de confirmare.`:`Thank you, ${$("w-name").value.trim()}! Prototype: the live site will add you to the list and send a confirmation email.`);
+});
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]"); if(!b) return;
+  const text = b.previousElementSibling.textContent;
+  const done = () => { b.textContent = lang==="ro"?"Copiat":"Copied"; setTimeout(render,1500); };
+  try { navigator.clipboard.writeText(text).then(done).catch(()=>{ getSelection().selectAllChildren(b.previousElementSibling); }); }
+  catch(_) { getSelection().selectAllChildren(b.previousElementSibling); }
+});
+render();
+</script>
+
+</body>
+</html>
